@@ -1,0 +1,21 @@
+# Virtual environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/  # Or the name of your virtual environment directory
+
+# IDE/OS Files
+.idea/
+.vscode/
+*.DS_Store
+
+# API Generated Files
+/swagger/
+/redoc/
+/openapi.json
+
+# Local Configuration (security)
+.env
+
+# Logs
+*.log
