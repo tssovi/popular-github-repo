@@ -1,0 +1,22 @@
+version: '3.11' # Specify a recent docker-compose version
+
+services:
+  popular-repo-api:
+    build: .  # Path to your Dockerfile
+    ports:
+      - "8000:8000"  # Map host port 8000 to exposed container port
+    environment:
+      # Replace with real GitHub access token
+      - GITHUB_ACCESS_TOKEN=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
+    restart: unless-stopped # Restart
+
+  tests:
+    build: .  # Path to your Dockerfile
+    command: pytest tests/  # Command to run tests
+    volumes:
+      - .:/code  # Mount project code for access to tests
+    environment:
+      - PYTHONPATH=/code/tests
+      - API_BASE_URL=http://popular-repo-api:8000
+    depends_on:
+      - popular-repo-api
