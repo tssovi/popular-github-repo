@@ -7,7 +7,7 @@ services:
       - "8000:8000"  # Map host port 8000 to exposed container port
     environment:
       # Replace with real GitHub access token
-      - GITHUB_ACCESS_TOKEN=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
+      - GITHUB_ACCESS_TOKEN=set_your_own_github_api_key
     restart: unless-stopped # Restart
 
   tests:
